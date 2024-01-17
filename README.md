@@ -22,9 +22,9 @@ The russian version of the task can be found in the repository.
 
 ![simple_bash_utils](misc/eng/images/bashutils.png)
 
-It was an ordinary grey autumn day in 1993. You came home from work at Hewlett-Packard, feeling a little tired. You had a small two-room apartment on the outskirts of N town. There was a low-alcohol drink in the refrigerator called "pivo". You took that drink and a bag of crackers then went to your little nook, to your computer made by Dell.
+It was an ordinary grey autumn day in 1993. You came home from work at Hewlett-Packard, feeling a little tired. You lived in a small two-bedroom apartment on the outskirts of N town. In the fridge was a low-alcohol drink called "Pivo". You took the drink and a bag of crackers, then went to your little corner, to your Dell computer.
 
-`*Click*` - the power button was pressed. A couple of minutes of boot loading and... yeah, it feels good. You always get that feeling when you turn on a computer. A few seconds of undisturbed pleasure and you opened the Mosaic browser. Then you went to your favorite forum, and while drinking pivo, you read some threads. Suddenly you came across a very interesting discussion, which began with the following message:
+`*Click*` - the power button was pressed. A few minutes of boot loading and... yeah, it feels good. You always get that feeling when you switch on a computer. A few seconds of undisturbed pleasure and you opened the Mosaic browser. Then you went to your favourite forum and read a few threads while sipping a Pivo. Suddenly you come across a very interesting discussion that started with the following message:
 
 > Hello everybody out there using minix -
 >
@@ -38,33 +38,32 @@ It was an ordinary grey autumn day in 1993. You came home from work at Hewlett-P
 >
 >— Linus Torvalds
 
-"Very interesting," you thought to yourself. As you scrolled down, you noticed that bash is not that well ported, and some functions didn't work. 
-In particular, there were problems with the utilities for word processing: cat and grep.
-"Interesting task, and it would be great to help this Linus Torvalds," you said aloud and immediately wrote a message in the thread saying that you're already working on it. 
-Well, let’s start!
+"Very interesting," you thought to yourself. As you scrolled down, you noticed that bash wasn't very well ported, and that some functions didn't work. 
+In particular, there were problems with the word processing utilities: cat and grep.
+"Interesting task, and it'd be great to help this Linus Torvalds guy," you said aloud, and immediately posted a message in the thread saying that you were already working on it. 
+Well, let's get started!
 
 ## Chapter I
 
 ## Introduction
 
-In this project you will learn and develop basic Bash utilities for working with C programming language texts. These utilities (cat and grep) are often used in the Linux terminal. As part of the project you’ll learn the organization of the Bash utilities and solidify knowledge of structured programming.
-
+In this project you will learn and develop basic Bash utilities for working with C language text. These utilities (cat and grep) are commonly used in the Linux terminal. As part of the project, you'll learn the organisation of the Bash utilities and consolidate your knowledge of structured programming.
 
 ## Chapter II
 
 ## Information
 
-### cat History
+### History of cat 
 
 > cat was part of the early versions of Unix, e.g., Version 1, and replaced pr, a PDP-7 and Multics utility for copying a single file to the screen.
 
-### cat Usage
+### Usage of cat
 
 Cat is one of the most frequently used commands on Unix-like operating systems. It has three related functions with regard to text files: displaying them, combining copies of them and creating new ones.
 
 `cat [OPTION] [FILE]...`
 
-### cat Options
+### cat options
 
 | No. | Options | Description |
 | ------ | ------ | ------ |
@@ -74,15 +73,16 @@ Cat is one of the most frequently used commands on Unix-like operating systems. 
 | 4 | -s (GNU: --squeeze-blank) | squeeze multiple adjacent blank lines |
 | 5 | -t implies -v (GNU: -T the same, but without implying -v) | but also display tabs as ^I  |
 
-### grep History
+### History of grep 
 
-> Thompson wrote the first version in PDP-11 assembly language to help Lee E. McMahon analyze the text of the Federalist Papers to determine authorship of the individual papers. The ed text editor (also authored by Thompson) had regular expression support but could not be used on such a large amount of text, so Thompson excerpted that code into a standalone tool. He chose the name because in ed, the command g/re/p would print all lines matching a specified pattern. grep was first included in Version 4 Unix. Stating that it is "generally cited as the prototypical software tool", McIlroy credited grep with "irrevocably ingraining" Thompson's tools philosophy in Unix.
+> Thompson wrote the first version in PDP-11 assembly language to help Lee E. McMahon analyse the text of the Federalist Papers to determine the authorship of each paper. The text editor ed (also written by Thompson) had support for regular expressions, but could not be used on such a large amount of text, so Thompson extracted this code into a standalone tool. He chose the name because in ed, the command g/re/p would print all lines matching a given pattern. 
+grep was first included in version 4 of Unix. Noting that it is "generally cited as the prototypical software tool", McIlroy credited grep with "irrevocably entrenching" Thompson's tool philosophy in Unix.
 
-### grep Usage
+### Usage of grep 
 
 `grep [options] template [file_name]`
 
-### grep Options
+### grep options
 
 | No. | Options | Description |
 | ------ | ------ | ------ |
