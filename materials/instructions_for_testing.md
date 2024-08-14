@@ -1,4 +1,4 @@
-# Instructions for running tests.
+# Instructions for running tests
 
 In addition to testing for correct output data, the autotest system will check your program and its source code for the
 following points:

@@ -26,9 +26,9 @@ The russian version of the task can be found in the repository.
 
 It was an ordinary grey autumn day in 1993. You came home from work at Hewlett-Packard, feeling a little tired. You lived in a small two-bedroom apartment on the outskirts of N town. In the fridge was a low-alcohol drink called "Pivo". You took the drink and a bag of crackers, then went to your little corner, to your Dell computer.
 
-`*Click*` - the power button was pressed. A few minutes of boot loading and... yeah, it feels good. You always get that feeling when you switch on a computer. A few seconds of undisturbed pleasure and you opened the Mosaic browser. Then you went to your favourite forum and read a few threads while sipping a Pivo. Suddenly you come across a very interesting discussion that started with the following message:
+`*Click*` — the power button was pressed. A few minutes of boot loading and... yeah, it feels good. You always get that feeling when you switch on a computer. A few seconds of undisturbed pleasure and you opened the Mosaic browser. Then you went to your favourite forum and read a few threads while sipping a Pivo. Suddenly you come across a very interesting discussion that started with the following message:
 
-> Hello everybody out there using minix -
+> Hello everybody out there using minix — 
 >
 >I'm doing a (free) operating system (just a hobby, won't be big and professional like gnu) for 386(486) AT clones. This has been brewing since april, and is starting to get ready. I'd like any feedback on things people like/dislike in minix, as my OS resembles it somewhat (same physical layout of the file-system (due to practical reasons) among other things).
 >
@@ -36,7 +36,7 @@ It was an ordinary grey autumn day in 1993. You came home from work at Hewlett-P
 >
 >Linus (torvalds@kruuna.helsinki.fi)
 >
->PS. Yes - it's free of any minix code, and it has a multi-threaded fs. It is NOT portable (uses 386 task switching etc), and it probably never will support anything other than AT-harddisks, as that's all I have :-(.
+>P.S. Yes — it's free of any minix code, and it has a multi-threaded fs. It is NOT portable (uses 386 task switching etc), and it probably never will support anything other than AT-harddisks, as that's all I have :-(.
 >
 >— Linus Torvalds
 
@@ -103,50 +103,46 @@ grep was first included in version 4 of Unix. Noting that it is "generally cited
 ## Chapter III
 
 - The programs must be developed in C language of C11 standard using gcc compiler.
-- The program code of the cat and grep must be located on the develop branch in the src/cat/ and src/grep/ folders, respectively  
+- The program code of the cat and grep must be located on the develop branch in the src/cat/ and src/grep/ folders, respectively.
 - Do not use outdated and legacy language constructions and library functions. Pay attention to the legacy and obsolete marks in the official documentation on the language and the libraries used. Use the POSIX.1-2017 standard.
-- When writing code it is necessary to follow the Google style
-- The programs must be executable files with command line arguments
-- The programs must be built with Makefile with appropriate targets: s21_cat, s21_grep
-- If third-party libraries are used, there must be build scripts in makefile to connect/load them
-- Integration tests must cover all flag variants and input values, based on a comparison with the behavior of real Bash utilities 
-- The programs must be developed according to the principles of structured programming
-- Code duplication must be avoided, common modules must be reused between the utilities. Common modules can be moved to a separate folder src/common
+- When writing code it is necessary to follow the Google style.
+- The programs must be executable files with command line arguments.
+- The programs must be built with Makefile with appropriate targets: s21_cat, s21_grep.
+- If third-party libraries are used, there must be build scripts in makefile to connect/load them.
+- Integration tests must cover all flag variants and input values, based on a comparison with the behavior of real Bash utilities.
+- The programs must be developed according to the principles of structured programming.
+- Code duplication must be avoided, common modules must be reused between the utilities. Common modules can be moved to a separate folder src/common.
 - You can use standard and non-standard C libraries, or you can use your own developed libraries from other projects
-- The statement of the message in the case of an error does not matter
-- Input via stdin is not required to be supported
+- The statement of the message in the case of an error does not matter.
+- Input via stdin is not required to be supported.
 
 ## Part 1. Working with the cat utility
 
 You need to develop a cat utility:
-- Support of all flags (including GNU versions) specified [above](#cat-options)
-- The source, header, and build files must be placed in the src/cat/ directory
-- The resulting executable file must be placed in the directory src/cat/ and named s21_cat
+- Support of all flags (including GNU versions) specified [above](#cat-options).
+- The source, header, and build files must be placed in the src/cat/ directory.
+- The resulting executable file must be placed in the directory src/cat/ and named s21_cat.
 
 ## Part 2. Working with grep utility
 
 You need to develop the grep utility:
-- Support of the following flags: `-e`, `-i`, `-v`, `-c`, `-l`, `-n`
-- Only pcre or regex libraries can be used for regular expressions
-- The source, header and make files must be placed in the src/grep/ directory
-- The resulting executable file must be placed in the directory src/grep/ and named s21_grep
+- Support of the following flags: `-e`, `-i`, `-v`, `-c`, `-l`, `-n`.
+- Only pcre or regex libraries can be used for regular expressions.
+- The source, header and make files must be placed in the src/grep/ directory.
+- The resulting executable file must be placed in the directory src/grep/ and named s21_grep.
 
 ## Part 3. Bonus. Implementation of some grep utility flags
 
 Bonus assignment for extra points. You need to develop the grep utility:
-- Support of all flags, including: `-h`, `-s`, `-f`, `-o`
-- Only pcre or regex libraries can be used for regular expressions
-- The source, header and make files must be placed in the src/grep/ directory
-- The resulting executable file must be placed in the directory src/grep/ and named s21_grep
+- Support of all flags, including: `-h`, `-s`, `-f`, `-o`.
+- Only pcre or regex libraries can be used for regular expressions.
+- The source, header and make files must be placed in the src/grep/ directory.
+- The resulting executable file must be placed in the directory src/grep/ and named s21_grep.
 
 ## Part 4. Bonus. Implementation of grep utility flag combinations
 
 Bonus assignment for extra points. You need to develop the grep utility:
-- Support of all flags, including their _pair_ combinations (e.g. `-iv`, `-in`)
-- Only pcre or regex libraries can be used for regular expressions
-- The source, header and make files must be placed in the src/grep/ directory
-- The resulting executable file must be placed in the directory src/grep/ and named s21_grep
-
-
-
-
+- Support of all flags, including their _pair_ combinations (e.g. `-iv`, `-in`).
+- Only pcre or regex libraries can be used for regular expressions.
+- The source, header and make files must be placed in the src/grep/ directory.
+- The resulting executable file must be placed in the directory src/grep/ and named s21_grep.
