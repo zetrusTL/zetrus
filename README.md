@@ -4,7 +4,7 @@ Development of Bash text utilities: cat, grep.
 
 The russian version of the task can be found in the repository.
 
-💡 Before starting work on your first project, fill out this [form](http://opros.so/kAnXy).
+>💡 **Before starting work on your first project, fill out this [form](http://opros.so/kAnXy).**
 
 ## Contents
 
