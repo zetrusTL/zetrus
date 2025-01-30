@@ -14,8 +14,8 @@ To’g’ri chiqish ma’lumotlarini sinovdan o’tkazishga qo’shimcha ravishd
   ```sudo apt install clang-format```
 
   Kerakli clang-format versiyasi: \
-  **Mac** 18.1.6 \
-  **Linux** 18.1.3
+  **Mac** 18.1.8 \
+  **Linux** 18.1.8
 
   Google Style: https://google.github.io/styleguide/cppguide.html
 
