@@ -16,7 +16,8 @@ void input_matrix(int grid[HEIGHT][WIDTH]);
 int change_speed(char button, int *stop, int speed);
 int check(int grid[HEIGHT][WIDTH], int new_grid[HEIGHT][WIDTH]);
 
-int main() {
+int main()
+{
     int stop = 0;
 
     int grid[HEIGHT][WIDTH] = {0};
@@ -24,14 +25,17 @@ int main() {
 
     int speed = 500;
 
-    if (freopen("/dev/tty", "r", stdin)) initscr();
+    if (freopen("/dev/tty", "r", stdin))
+        initscr();
     nodelay(stdscr, true);
 
-    while (stop != 1) {
+    while (stop != 1)
+    {
         char button = getch();
         speed = change_speed(button, &stop, speed);
         print_grid(grid);
-        if (update_grid(grid) == 2000) {
+        if (update_grid(grid) == 2000)
+        {
             stop = 1;
         }
 
@@ -46,41 +50,53 @@ int main() {
 }
 
 // Функция для отрисовки сетки
-void print_grid(int grid[HEIGHT][WIDTH]) {
+void print_grid(int grid[HEIGHT][WIDTH])
+{
     clear();
 
     // Отрисовка верхней границы
-    for (int j = 0; j < WIDTH + 2; j++) {
+    for (int j = 0; j < WIDTH + 2; j++)
+    {
         printw("-");
     }
     printw("\n");
 
     // Отрисовка сетки
-    for (int i = 0; i < HEIGHT; i++) {
-        printw("|");  // Левая граница
-        for (int j = 0; j < WIDTH; j++) {
-            if (grid[i][j] == 1) {
+    for (int i = 0; i < HEIGHT; i++)
+    {
+        printw("|"); // Левая граница
+        for (int j = 0; j < WIDTH; j++)
+        {
+            if (grid[i][j] == 1)
+            {
                 printw("%c", '*');
-            } else {
+            }
+            else
+            {
                 printw("%c", ' ');
             }
         }
-        printw("|\n");  // Правая граница
+        printw("|\n"); // Правая граница
     }
 
     // Отрисовка нижней границы
-    for (int j = 0; j < WIDTH + 2; j++) {
+    for (int j = 0; j < WIDTH + 2; j++)
+    {
         printw("-");
     }
     printw("\n");
 }
 
 // Функция для подсчета соседей
-int count_neighbors(int grid[HEIGHT][WIDTH], int x, int y) {
+int count_neighbors(int grid[HEIGHT][WIDTH], int x, int y)
+{
     int count = 0;
-    for (int i = -1; i <= 1; i++) {
-        for (int j = -1; j <= 1; j++) {
-            if (i == 0 && j == 0) continue;
+    for (int i = -1; i <= 1; i++)
+    {
+        for (int j = -1; j <= 1; j++)
+        {
+            if (i == 0 && j == 0)
+                continue;
             int nx = (x + i + HEIGHT) % HEIGHT;
             int ny = (y + j + WIDTH) % WIDTH;
             count = count + grid[nx][ny];
@@ -90,22 +106,34 @@ int count_neighbors(int grid[HEIGHT][WIDTH], int x, int y) {
 }
 
 // Функция для обновления сетки
-int update_grid(int grid[HEIGHT][WIDTH]) {
+int update_grid(int grid[HEIGHT][WIDTH])
+{
     int new_grid[HEIGHT][WIDTH];
 
-    for (int i = 0; i < HEIGHT; i++) {
-        for (int j = 0; j < WIDTH; j++) {
+    for (int i = 0; i < HEIGHT; i++)
+    {
+        for (int j = 0; j < WIDTH; j++)
+        {
             int neighbors = count_neighbors(grid, i, j);
-            if (grid[i][j] == 1) {
-                if (neighbors == 2 || neighbors == 3) {
+            if (grid[i][j] == 1)
+            {
+                if (neighbors == 2 || neighbors == 3)
+                {
                     new_grid[i][j] = 1;
-                } else {
+                }
+                else
+                {
                     new_grid[i][j] = 0;
                 }
-            } else {
-                if (neighbors == 3) {
+            }
+            else
+            {
+                if (neighbors == 3)
+                {
                     new_grid[i][j] = 1;
-                } else {
+                }
+                else
+                {
                     new_grid[i][j] = 0;
                 }
             }
@@ -114,46 +142,69 @@ int update_grid(int grid[HEIGHT][WIDTH]) {
 
     int r = check(grid, new_grid);
 
-    for (int i = 0; i < HEIGHT; i++) {
-        for (int j = 0; j < WIDTH; j++) {
+    for (int i = 0; i < HEIGHT; i++)
+    {
+        for (int j = 0; j < WIDTH; j++)
+        {
             grid[i][j] = new_grid[i][j];
         }
     }
     return r;
 }
 
-void input_matrix(int grid[HEIGHT][WIDTH]) {
-    for (int i = 0; i < HEIGHT; ++i) {
-        for (int j = 0; j < WIDTH; ++j) {
+void input_matrix(int grid[HEIGHT][WIDTH])
+{
+    for (int i = 0; i < HEIGHT; ++i)
+    {
+        for (int j = 0; j < WIDTH; ++j)
+        {
             scanf("%d", &grid[i][j]);
         }
     }
 }
 
-int change_speed(char button, int *stop, int speed) {
-    if (button == '6') {
+int change_speed(char button, int *stop, int speed)
+{
+    if (button == '6')
+    {
         speed = 1;
-    } else if (button == '5') {
+    }
+    else if (button == '5')
+    {
         speed = 100;
-    } else if (button == '4') {
+    }
+    else if (button == '4')
+    {
         speed = 400;
-    } else if (button == '3') {
+    }
+    else if (button == '3')
+    {
         speed = 700;
-    } else if (button == '2') {
+    }
+    else if (button == '2')
+    {
         speed = 1000;
-    } else if (button == '1') {
+    }
+    else if (button == '1')
+    {
         speed = 1500;
-    } else if (button == 'q') {
+    }
+    else if (button == 'q')
+    {
         *stop = 1;
     }
     return speed;
 }
 
-int check(int grid[HEIGHT][WIDTH], int new_grid[HEIGHT][WIDTH]) {
+int check(int grid[HEIGHT][WIDTH], int new_grid[HEIGHT][WIDTH])
+{
     int ans = 0;
-    for (int i = 0; i < HEIGHT; ++i) {
-        for (int j = 0; j < WIDTH; ++j) {
-            if (grid[i][j] == new_grid[i][j]) {
+    for (int i = 0; i < HEIGHT; ++i)
+    {
+        for (int j = 0; j < WIDTH; ++j)
+        {
+            if (grid[i][j] == new_grid[i][j])
+            {
                 ans++;
             }
         }
@@ -161,30 +212,38 @@ int check(int grid[HEIGHT][WIDTH], int new_grid[HEIGHT][WIDTH]) {
     return ans;
 }
 
-void print_end_grid(int grid[HEIGHT][WIDTH]) {
+void print_end_grid(int grid[HEIGHT][WIDTH])
+{
     clear();
 
     // Отрисовка верхней границы
-    for (int j = 0; j < WIDTH + 2; j++) {
+    for (int j = 0; j < WIDTH + 2; j++)
+    {
         printf("-");
     }
     printf("\n");
 
     // Отрисовка сетки
-    for (int i = 0; i < HEIGHT; i++) {
-        printf("|");  // Левая граница
-        for (int j = 0; j < WIDTH; j++) {
-            if (grid[i][j] == 1) {
+    for (int i = 0; i < HEIGHT; i++)
+    {
+        printf("|"); // Левая граница
+        for (int j = 0; j < WIDTH; j++)
+        {
+            if (grid[i][j] == 1)
+            {
                 printf("%c", '*');
-            } else {
+            }
+            else
+            {
                 printf("%c", ' ');
             }
         }
-        printf("|\n");  // Правая граница
+        printf("|\n"); // Правая граница
     }
 
     // Отрисовка нижней границы
-    for (int j = 0; j < WIDTH + 2; j++) {
+    for (int j = 0; j < WIDTH + 2; j++)
+    {
         printf("-");
     }
     printf("\n");
