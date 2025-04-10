@@ -103,7 +103,7 @@ grep birinchi marta Unixning 4-Versiyasiga kiritilgan. U "odatda prototip dastur
 - Dasturlar gcc kompilyatoridan foydalangan holda C11 standartidagi C tilida ishlab chiqilishi kerak.
 - cat va grep dasturlari uchun kod mos ravishda src/cat/ va src/grep/ papkalaridagi develop tarmog’ida bo'lishi kerak.
 - Eskirgan yoki iste’moldan chiqarilgan til konstruksiyalari va kutubxona funksiyalaridan foydalanmang. Til va ishlatiluvchi kutubxonalar bo’yicha rasmiy hujjatlardagi legacy va obsolete belgilariga e'tibor bering. POSIX.1-2017 standartiga qarab mo’ljal oling.
-- Kod yozishda Google Style ga amal qilinishi kerak.
+- Kod yozishda C++ uchun Google Style ((havola)[(https://google.github.io/styleguide/cppguide.html)]) ga amal qiling.
 - Dasturlar buyruq qatori argumentlariga ega bo’lgan bajariladigan fayl bo'lishi kerak
 - Dasturlarni yig’ish tegishli maqsadlarga ega Makefile yordamida sozlanishi kerak: s21_cat, s21_grep.
 - Agar siz begona kutubxonalardan foydalansangiz, Makefileda ularning ulanishi/yuklanishini nazarda tutuvchi yig’im ssenariylari joylashgan bo’lishi kerak.
