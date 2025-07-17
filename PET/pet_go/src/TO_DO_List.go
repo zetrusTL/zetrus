@@ -15,7 +15,10 @@ func main() {
 	spisok := make([]string, 0)
 	for {
 		reader := bufio.NewReader(os.Stdin)
-		input, _ := reader.ReadString('\n')
+		input, err := reader.ReadString('\n')
+		if err != nil {
+			return
+		}
 
 
 		if len(input) > 0 && input[len(input)-1] == '\n' {
@@ -72,5 +75,8 @@ func main() {
 
 			default : fmt.Println("Invalid command! Please, try again!")
 		}
+		fmt.Println("Enter your command (create, read, update, delete):")
+		input, _ = reader.ReadString('\n')
+		input = strings.TrimSpace(input)
 	}
 }
